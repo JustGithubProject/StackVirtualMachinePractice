@@ -40,4 +40,33 @@ void StackVM::fetch()
 void StackVM::decode()
 {
     typ = getType(memory[pc]);
+    dat = getData(memory[pc]);
+}
+
+void StackVM::execute()
+{
+    if (typ == 0 || typ == 2)
+    {
+        sp++;
+        memory[sp] = dat;
+    }
+    else
+    {
+        doPrimitive();
+    }
+}
+
+void StackVM::doPrimitive()
+{
+    switch(dat)
+    {
+        case 0: // halt
+            std::cout << "halt" << std::endl;
+            running = 0;
+            break;
+        case 1: // add
+            std::cout << "add " << memory[sp - 1] << " " << memory[sp] << std::endl;
+            memory[sp - 1] = memory[sp - 1] + memory[sp];
+            break;
+    }
 }
