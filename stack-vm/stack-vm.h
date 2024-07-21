@@ -9,6 +9,7 @@ typedef int32_t i32;
 
 class StackVM
 {
+private:
     i32 pc = 100; // program counter
     i32 sp = 0;  // stack pointer
     std::vector<i32> memory;
