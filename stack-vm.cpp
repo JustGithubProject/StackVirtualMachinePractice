@@ -67,6 +67,7 @@ void StackVM::doPrimitive()
         case 1: // add
             std::cout << "add " << memory[sp - 1] << " " << memory[sp] << std::endl;
             memory[sp - 1] = memory[sp - 1] + memory[sp];
+            sp--;
             break;
     }
 }
