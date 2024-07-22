@@ -166,7 +166,7 @@ bool Lexer::myIsSpace(char c)
         case '\v':
         case ' ':
         case '\f':
-        return true;
+            return true;
         default:
             return false;
     }
