@@ -28,6 +28,7 @@ private:
     char endChar, begChar;
 public:
     strings lex(std::string s);
+    
 };
 
 #endif
