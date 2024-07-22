@@ -72,7 +72,7 @@ strings Lexer::lex(std::string s)
             else if (s[i] == '/' && s[i + 1] == '/')
             {
                 i += 2;
-                state = COMMENT:
+                state = COMMENT;
             }
             else
             {
@@ -124,7 +124,7 @@ strings Lexer::lex(std::string s)
             }
             break;
         case DUMP:
-            if (j < 0)
+            if (j > 0)
             {
                 lexeme[j] = 0;
                 strlst.push_back(lexeme);
@@ -150,7 +150,7 @@ strings Lexer::lex(std::string s)
     if (j > 0)
     {
         lexeme[j] = 0;
-        strlst.push_back(lexeme)
+        strlst.push_back(lexeme);
     }   
     return strlst;
 }

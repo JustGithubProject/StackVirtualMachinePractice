@@ -17,7 +17,7 @@ enum State : byte
     DUMP,
     COMMENT,
     END
-}
+};
 
 class Lexer
 {
